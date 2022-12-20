@@ -95,6 +95,28 @@ return packer.startup(function(use)
 	-- Git signs
 	use("lewis6991/gitsigns.nvim")
 
+	-- Git fugitive
+	use({
+		"tpope/vim-fugitive",
+		opt = true,
+		cmd = {
+			"G",
+			"Git",
+			"Gdiffsplit",
+			"Gvdiffsplit",
+			"Gedit",
+			"Gsplit",
+			"Gread",
+			"Gwrite",
+			"Ggrep",
+			"Glgrep",
+			"Gmove",
+			"Gdelete",
+			"Gremove",
+			"Gbrowse",
+		},
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
