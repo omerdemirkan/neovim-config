@@ -117,6 +117,10 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- Harpoon: For when you have a small list of files you
+	-- visit often. Is specific to project and git branch.
+	use("theprimeagen/harpoon")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

@@ -66,3 +66,13 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- An optional paste without copy to clipboard.
 keymap.set("x", "<leader>p", '"_dP')
+
+-- Harpoon
+local mark_status, mark = pcall(require, "harpoon.mark")
+local ui_status, ui = pcall(require, "harpoon.ui")
+
+if mark_status and ui_status then
+	-- Mark file
+	keymap.set("n", "<leader>mf", mark.add_file)
+	keymap.set("n", "<c-e>", ui.toggle_quick_menu)
+end
