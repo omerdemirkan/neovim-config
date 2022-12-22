@@ -5,7 +5,7 @@ local keymap = vim.keymap -- for conciseness
 -- Typing ii quickly escapes insert mode
 keymap.set("i", "ii", "<ESC>")
 
--- No highlight shortcut: for when shit's 
+-- No highlight shortcut: for when shit's
 -- highlighted, but you don't want it to be.
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
@@ -55,4 +55,14 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 -- Find help tags
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 
+-- Move block around without cut/paste
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Allows cursor to stay in place when moving
+-- up and down half a page
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- An optional paste without copy to clipboard.
+keymap.set("x", "<leader>p", '"_dP')

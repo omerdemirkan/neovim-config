@@ -11,6 +11,13 @@ opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
 
+-- Gets rid of highlights after search
+opt.hlsearch = false
+
+-- Ensures that when scrolling up/down, our cursor is
+-- at least 8 lines away from top/bottom
+opt.scrolloff = 8
+
 -- line wrapping
 opt.wrap = false
 
@@ -38,9 +45,3 @@ opt.splitright = true
 
 -- this-thing is one word. dw will now delete it entirely.
 opt.iskeyword:append("-")
-
-
-
-
-
-
