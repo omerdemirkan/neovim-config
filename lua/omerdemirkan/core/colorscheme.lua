@@ -7,15 +7,17 @@ end
 tokyonight.setup({
 	-- transparent = true,
 	on_colors = function(colors)
-		colors["bg_float"] = "#1a1a2b"
-		colors["bg_statusline"] = "#1a1a2b"
-		colors["bg_sidebar"] = "#1a1a2b"
-		colors["bg_popup"] = "#1a1a2b"
-		colors["bg_dark"] = "#1a1a2b"
+		colors["bg_float"] = "#181b24"
+		colors["bg_statusline"] = "#181b24"
+		colors["bg_sidebar"] = "#181b24"
+		colors["bg_popup"] = "#181b24"
+		colors["bg_dark"] = "#181b24"
 
 		colors["bg"] = "#06060a"
 
-		colors["bg_highlight"] = "#222736"
+		colors["bg_highlight"] = "#272a33"
+
+		colors["border"] = "#ffffff"
 	end,
 })
 
