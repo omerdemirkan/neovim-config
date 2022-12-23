@@ -23,7 +23,7 @@ keymap.set("n", "<leader>sh", "<C-w>s")
 keymap.set("n", "<leader>se", "<C-w>=")
 
 -- Close current split window
-keymap.set("n", "<leader>sx", ":close<CR>")
+keymap.set("n", "<leader>sx", ":close<cr>")
 
 -- Open new tab
 keymap.set("n", "<leader>to", ":tabnew<CR>")

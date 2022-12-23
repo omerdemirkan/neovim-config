@@ -18,6 +18,8 @@ opt.hlsearch = false
 -- at least 8 lines away from top/bottom
 opt.scrolloff = 8
 
+opt.timeoutlen = 200
+
 -- line wrapping
 opt.wrap = false
 
