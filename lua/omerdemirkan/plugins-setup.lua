@@ -12,12 +12,13 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
-vim.cmd([[ 
-  augroup packer_user_config
-    autocmd!
-    autocmd bufwritepost plugins-setup.lua source <afile> | packersync
-  augroup end
-]])
+--
+-- vim.cmd([[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd bufwritepost plugins-setup.lua source <afile> | packersync
+--   augroup end
+-- ]])
 
 -- import packer safely
 local status, packer = pcall(require, "packer")
@@ -72,7 +73,13 @@ return packer.startup(function(use)
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
-	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+	})
 	use("onsails/lspkind.nvim")
 
 	-- Linters and formatters
