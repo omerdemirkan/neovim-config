@@ -35,6 +35,8 @@ treesitter.setup({
 		"python",
 		"go",
 		"rust",
+		"markdown",
+		"markdown_inline",
 	},
 	-- auto install above language parsers
 	auto_install = true,

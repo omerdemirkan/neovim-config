@@ -5,7 +5,6 @@ if not tokyonight_status then
 end
 
 tokyonight.setup({
-	-- transparent = true,
 	on_colors = function(colors)
 		colors["bg_float"] = "#111114"
 		colors["bg_statusline"] = "#111114"
@@ -19,6 +18,7 @@ tokyonight.setup({
 		--
 		-- colors["border"] = "#ffffff"
 	end,
+	transparent = true,
 })
 
 local status, _ = pcall(vim.cmd, "colorscheme tokyonight-night")

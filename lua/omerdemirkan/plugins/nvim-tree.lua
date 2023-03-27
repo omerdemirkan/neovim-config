@@ -35,4 +35,8 @@ nvimtree.setup({
 	git = {
 		ignore = false,
 	},
+
+	view = {
+		width = 60,
+	},
 })

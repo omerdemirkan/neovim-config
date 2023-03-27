@@ -10,16 +10,6 @@ local ensure_packer = function()
 end
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
--- autocommand that reloads neovim and installs/updates/removes plugins
--- when file is saved
---
--- vim.cmd([[
---   augroup packer_user_config
---     autocmd!
---     autocmd bufwritepost plugins-setup.lua source <afile> | packersync
---   augroup end
--- ]])
-
 -- import packer safely
 local status, packer = pcall(require, "packer")
 if not status then
@@ -39,8 +29,6 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 
 	-- for commenting.
-	-- highlight and hit "gc" to comment
-	-- or hit "gcc" to comment a single line.
 	use("numtostr/comment.nvim")
 
 	-- nvim tree (file explorer)
@@ -73,13 +61,7 @@ return packer.startup(function(use)
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		config = function()
-			require("lspsaga").setup({})
-		end,
-	})
+	use("glepnir/lspsaga.nvim")
 	use("onsails/lspkind.nvim")
 
 	-- Linters and formatters
@@ -127,6 +109,11 @@ return packer.startup(function(use)
 	-- Harpoon: For when you have a small list of files you
 	-- visit often. Is specific to project and git branch.
 	use("theprimeagen/harpoon")
+
+	use("tpope/vim-surround")
+
+	-- For github permalinks
+	use("ruifm/gitlinker.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

@@ -21,5 +21,6 @@ telescope.setup({
 			},
 		},
 		layout_strategy = vim.o.lines > 40 and "vertical" or "horizontal",
+		file_ignore_patterns = { "node_modules", "bin", "dist" },
 	},
 })
