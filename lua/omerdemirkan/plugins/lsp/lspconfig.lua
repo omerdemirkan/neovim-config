@@ -1,12 +1,15 @@
--- import lspconfig plugin safely
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
 	return
 end
 
--- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
+	return
+end
+
+local typescript_setup, typescript = pcall(require, "typescript")
+if not typescript_setup then
 	return
 end
 
@@ -47,11 +50,14 @@ lspconfig.html.setup({
 	on_attach = on_attach,
 })
 
-lspconfig.tsserver.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-	cmd = { "typescript-language-server", "--stdio" },
+-- Arguments for lspconfig.tsserver go into server.
+typescript.setup({
+	server = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+		filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+		cmd = { "typescript-language-server", "--stdio" },
+	},
 })
 
 -- configure css server

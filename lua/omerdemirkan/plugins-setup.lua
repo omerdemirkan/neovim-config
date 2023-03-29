@@ -63,6 +63,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("glepnir/lspsaga.nvim")
 	use("onsails/lspkind.nvim")
+	use("jose-elias-alvarez/typescript.nvim")
 
 	-- Linters and formatters
 	use("jose-elias-alvarez/null-ls.nvim")
